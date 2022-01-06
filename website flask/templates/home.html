@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <style type="text/css">
+      body, html {
+        height: 100%;
+      }
+
+      .head {
+        color: black;
+        font-family: sans-serif;
+        font-size: 30px;
+        border-bottom: double;
+        text-align: center;
+      }
+      body {
+        background-image: url('images/ste.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+
+
+    </style>
+
+  </head>
+  <body >
+  <div class="container main">
+    <div class="jumbotron" id="holder">
+      <br>
+      <div>
+        <center>
+          <span style="font-size:50px; text-shadow: 3px 3px 6px grey;font-weight: bolder;font-family:'Garamound';color:royalblue">Digital Dispensary</span></center>
+      </div>
+      <div class="head">
+      </div>
+      <p>This Web Based Application that predicts the disease a patient might be suffering from </p>
+      <br>
+      <div class="instructions">
+        <p>Please fill in the following fields </p>
+      </div>
+    <form method="POST" action="{{url_for('home')}}">
+
+        
+      <label for="symptom1">Choose a symptom 1:</label>
+      <select class="form-select" name="symptom1" id="symptom1" required>
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          pain during bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom2">Choose a symptom 2:</label>
+      <select class="form-select" name="symptom2" id="symptom2" required>
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom3">Choose a symptom 3:</label>
+      <select class="form-select" name="symptom3" id="symptom3" required>
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          pain during bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom4">Choose a symptom 4:</label>
+      <select class="form-select" name="symptom4" id="symptom4" required>
+        <option disabled>Choose a symptom</option>
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom5">Choose a symptom 5:</label>
+      <select class="form-select" name="symptom5" id="symptom5" required>
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom6">Choose a symptom 6:</label>
+      <select class="form-select" name="symptom6" id="symptom6" required>
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom7">Choose a symptom 7:</label>
+      <select class="form-select" name="symptom7" id="symptom7" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom8">Choose a symptom 8:</label>
+      <select class="form-select" name="symptom8" id="symptom8" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom9">Choose a symptom 9:</label>
+      <select class="form-select" name="symptom9" id="symptom9" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom10">Choose a symptom 10:</label>
+      <select class="form-select" name="symptom10" id="symptom10" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom11">Choose a symptom 11:</label>
+      <select class="form-select" name="symptom11" id="symptom11" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom12">Choose a symptom 12:</label>
+      <select class="form-select" name="symptom12" id="symptom12" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom13">Choose a symptom 13:</label>
+      <select class="form-select" name="symptom13" id="symptom13" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom14">Choose a symptom 14:</label>
+      <select class="form-select" name="symptom14" id="symptom14" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom15">Choose a symptom 15:</label>
+      <select class="form-select" name="symptom15" id="symptom15" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom16">Choose a symptom 16:</label>
+      <select class="form-select" name="symptom16" id="symptom16" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option></select
+      ><br />
+
+      <label for="symptom17">Choose a symptom 17:</label>
+      <select class="form-select" name="symptom17" id="symptom17" >
+        <option value=" "> </option>
+        <option value="back_pain">Fback_pain</option>
+        <option value="bladder_discomfort">bladder discomfort</option>
+        <option value="breathlessness">breathlessness</option>
+        <option value="burning_micturition">burning micturition</option>
+        <option value="chest_pain">chest pain</option>
+        <option value="chills">chills</option>
+        <option value="constipation">constipation</option>
+        <option value="continuous_sneezing">continuous sneezing</option>
+        <option value="cough">cough</option>
+        <option value="cramps">cramps</option>
+        <option value="fatigue">fatigue</option>
+        <option value="headache">headache</option>
+        <option value="high_fever">high fever</option>
+        <option value="indigestion">indigestion</option>
+        <option value="joint_pain">joint_pain</option>
+        <option value="mood_swings">mood_swings</option>
+        <option value="muscle_wasting">muscle wasting</option>
+        <option value="muscle_weakness">muscle weakness</option>
+        <option value="neck_pain">neck pain</option>
+        <option value="pain_during_bowel_movements">
+          paind uring bowel movements
+        </option>
+        <option value="patches in throat">patches in throat</option>
+        <option value="pus_filled_pimples">pus filled pimples</option>
+        <option value="shivering">shivering</option>
+        <option value="skin_rash">skin_rash</option>
+        <option value="stiff_neck">stiff neck</option>
+        <option value="stomach_pain">stomach pain</option>
+        <option value="sunken_eyes">sunken eyes</option>
+        <option value="vomiting">vomiting</option>
+        <option value="weakness_in_limbs">weakness in limbs</option>
+        <option value="weight_gain">weight gain</option>
+        <option value="weight_loss">weight loss</option>
+        <option value="yellowish skin">yellowish skin</option>
+        <option value="itching">itching</option>
+        <option value="acidity">acidity</option>
+        <option value="anxiety">anxiety</option>
+        <option value="blackheads">blackheads</option>
+        <option value="depression">depression</option>
+        <option value="irritability">irritability</option>
+        <option value="malaise">malaise</option>
+        <option value="palpitations">palpitations</option>
+        <option value="redness_of_eyes">redness of eyes</option>
+        <option value="runny_nose">runny nose</option>
+        s</select
+      ><br />
+
+      <br /><br />
+      <input type="submit" value="predict" />
+    </form>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
