@@ -96,8 +96,7 @@ def home():
     disease_prediction = loaded_model.predict(np_df)
     print(disease_prediction)
 
-    return render_template('after.html')
-
+    return render_template('after.html', data = disease_prediction)
 
 
 
