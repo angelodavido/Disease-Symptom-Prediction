@@ -1,17 +1,34 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np 
-import tensorflow as tf
 from tensorflow import keras
 import pandas as pd
+import os
+import pickle
+import tensorflow as tf
+from sklearn.preprocessing import StandardScaler
+from sklearn import preprocessing
 
 
-
+# label_encoder = preprocessing.LabelEncoder()
+#Create a scaler model that is fit on the input data.
+scaler = StandardScaler()
 #Loading a Model 
 loaded_model = keras.models.load_model("C:/Users/mwamb/Desktop/Desktop/disease prediction/disease_save")
 # loaded_model =  tf.keras.models.load_model("C:/Users/mwamb/Desktop/Desktop/disease prediction/disease_save/saved_model.pb")
 
-
+disease_dict = { 'Fungal infection':15, 'Allergy':4, 'GERD':16, 'Chronic cholestasis':9,
+       'Drug Reaction':14, 'Peptic ulcer diseae':33, 'AIDS':1, 'Diabetes ':12,
+       'Gastroenteritis':17, 'Bronchial Asthma':6, 'Hypertension ':23, 'Migraine':30,
+       'Cervical spondylosis':7, 'Paralysis (brain hemorrhage)':32, 'Jaundice':28,
+       'Malaria':29, 'Chicken pox':8, 'Dengue':11, 'Typhoid':37, 'hepatitis A':40,
+       'Hepatitis B':19, 'Hepatitis C':20, 'Hepatitis D':21, 'Hepatitis E':22,
+       'Alcoholic hepatitis':3, 'Tuberculosis':36, 'Common Cold':10, 'Pneumonia':34,
+       'Dimorphic hemmorhoids(piles)':13, 'Heart attack':18, 'Varicose veins':39,
+       'Hypothyroidism':26, 'Hyperthyroidism':24, 'Hypoglycemia':25,
+       'Osteoarthristis':31, 'Arthritis':5,
+       '(vertigo) Paroymsal  Positional Vertigo':0, 'Acne':2,
+       'Urinary tract infection':38, 'Psoriasis':35, 'Impetigo':27}
 # df = pd.DataFrame(columns=["symptom1", "symptom2", "symptom3", "symptom4", "symptom5", "symptom6", "symptom7", "symptom8", "symptom9", "symptom10", "symptom11", "symptom12", "symptom13", "symptom14", "symptom15", "symptom16" "symptom17"])
 # df
 
@@ -64,7 +81,7 @@ def home():
     df["symptom15"] = df["symptom15"].astype('category')
     df["symptom16"] = df["symptom16"].astype('category')
     df["symptom17"] = df["symptom17"].astype('category')
-    print(df.dtypes)
+    # print(df.dtypes)
 
 
     df["symptom01"] = df["symptom1"].cat.codes
@@ -84,19 +101,37 @@ def home():
     df["symptom015"] = df["symptom15"].cat.codes
     df["symptom016"] = df["symptom16"].cat.codes
     df["symptom017"] = df["symptom17"].cat.codes  
-    print(df.dtypes) 
+    # print(df.dtypes) 
 
     df.drop(['symptom1','symptom2','symptom3','symptom4','symptom5','symptom6','symptom7','symptom8','symptom9','symptom10','symptom11','symptom12','symptom13','symptom14','symptom15','symptom16','symptom17'], axis = 1, inplace = True)
-    print(df.head())
+    # print(df.head())
 
     #Convert input to numpy array
     np_df = df.to_numpy()
-    print(np_df)
+    # print(np_df)
 
-    disease_prediction = loaded_model.predict(np_df)
-    print(disease_prediction)
+    scaler.fit(np_df)
 
-    return render_template('after.html', data = disease_prediction)
+        #Scale prediction data with the same scaling model
+    scaled_input = scaler.transform(np_df)
+
+    #Get raw prediction probabilities
+    raw_prediction = loaded_model.predict(scaled_input)
+    # print("Raw Prediction Output (Probabilities) :" , raw_prediction)
+
+    #Find prediction
+    prediction = np.argmax(raw_prediction)
+
+    # pred = label_encoder.inverse_transform([prediction])
+    
+    for key, val in disease_dict.items():
+        if val== prediction:
+            print(key)
+
+
+
+
+    return render_template('after.html', key = key)
 
 
 
